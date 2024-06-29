@@ -5,13 +5,16 @@
   "keywords": [
     "jellyfin"
   ],
-  "type": "module",
+  "type": "commonjs",
   "main": "./lib/index.js",
   "typings": "./lib/index.d.ts",
   "license": "MPL-2.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/jellyfin/jellyfin-sdk-typescript.git"
+  },
+  "engines": {
+    "node": ">=14"
   },
   "scripts": {
     "build": "npm run build:generated-client && npm run build:sdk",
@@ -25,21 +28,20 @@
     "test": "vitest --exclude **/integration.test.ts"
   },
   "devDependencies": {
-    "@openapitools/openapi-generator-cli": "2.13.4",
+    "@openapitools/openapi-generator-cli": "2.7.0",
     "@rollup/plugin-typescript": "11.1.6",
     "@tsconfig/recommended": "1.0.6",
-    "@typescript-eslint/eslint-plugin": "7.3.1",
-    "@typescript-eslint/parser": "7.3.1",
-    "@vitest/coverage-v8": "1.6.0",
-    "eslint": "8.57.0",
+    "@typescript-eslint/eslint-plugin": "^5.56.0",
+    "@typescript-eslint/parser": "^5.56.0",
+    "eslint": "^8.36.0",
     "eslint-plugin-import": "2.29.1",
-    "eslint-plugin-vitest": "0.3.26",
+    "eslint-plugin-vitest": "0.1.5",
     "glob": "10.4.1",
     "rimraf": "5.0.7",
-    "rollup": "4.18.0",
-    "typedoc": "0.25.13",
-    "typescript": "5.4.5",
-    "vitest": "1.6.0"
+    "rollup": "3.29.4",
+    "typedoc": "^0.24.0",
+    "typescript": "^4.9.5",
+    "vitest": "0.29.8"
   },
   "peerDependencies": {
     "axios": "^1.3.4"

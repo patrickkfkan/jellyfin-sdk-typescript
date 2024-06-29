@@ -23,7 +23,7 @@ export default {
 	),
 	output: {
 		dir: 'lib',
-		format: 'es',
+		format: 'cjs',
 		preserveModules: true,
 		preserveModulesRoot: 'src'
 	},
