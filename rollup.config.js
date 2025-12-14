@@ -1,11 +1,10 @@
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+const path = require('node:path');
 
-import typescript from '@rollup/plugin-typescript';
-import { glob } from 'glob';
+const typescript = require('@rollup/plugin-typescript');
+const { glob } = require('glob');
 
 /** @type {import('rollup').RollupOptions} */
-export default {
+module.exports = {
 	// This is adapted from the sample config: https://www.rollupjs.org/configuration-options/#input
 	input: Object.fromEntries(
 		// Only looking for index files since they should be the only entry points
@@ -18,12 +17,12 @@ export default {
 			),
 			// This expands the relative paths to absolute paths, so e.g.
 			// src/nested/foo becomes /project/src/nested/foo.js
-			fileURLToPath(new URL(file, import.meta.url))
+			path.resolve(__dirname, file)
 		])
 	),
 	output: {
 		dir: 'lib',
-		format: 'es',
+		format: 'cjs',
 		preserveModules: true,
 		preserveModulesRoot: 'src'
 	},
